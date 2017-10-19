@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative #lib/ice-cream-cli-app
+require_relative '..lib/ice-cream-cli-app'
 
-IceCreamCliApp::CLI.new.call
+#IceCreamCliApp::CLI.new.call

@@ -6,15 +6,16 @@ class IceCreamCliApp::CLI
 
     def list_flavors
       puts "New flavors:"
+    end
 
 
-    def menu
-      input = nil
-      while input != "exit"
-        puts "Enter flavor number you'd like more info on or type list to see flavors again, or type exit:"
-        input = gets.strip.to_i.downcase
+    #def menu
+    #  input = nil
+    #  while input != "exit"
+    #    puts "Enter flavor number you'd like more info on, or type list to see flavors again, or type exit:"
+    #    input = gets.strip.to_i.downcase
 
-        if input.to_i > 0
+    #    if input.to_i > 0
 
 
 
