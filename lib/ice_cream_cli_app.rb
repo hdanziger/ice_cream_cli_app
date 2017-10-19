@@ -1,5 +1,2 @@
-require "ice_cream_cli_app/version"
-
-module IceCreamCliApp
-  # Your code goes here...
-end
+require_relative "ice_cream_cli_app/version"
+require_relative './ice_cream_cli_app/cli'
