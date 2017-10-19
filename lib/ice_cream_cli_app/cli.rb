@@ -8,15 +8,7 @@ class IceCreamCliApp::CLI
 
   def list_flavors
     puts "Welcome to the newest 3 ice cream flavors for the top 2 brands!"
-    puts <<-DOC
-    New flavors:
-    1. Truffle Kerfuffle
-    2. One Sweet World
-    3. Out Of This Swirled
-    4. Bourbon Praline Pecan
-    5. Espresso Chocolate Cookie Crumble
-    6. Toasted Coconut Caramel
-    DOC
+    @flavors = IceCreamCliApp::IceCreamFlavor.all
   end
 
   def menu
@@ -26,11 +18,11 @@ class IceCreamCliApp::CLI
       input = gets.strip.downcase
       case input
       when "1"
-        puts "More info on Truffle Kerfuffle..."
+        puts "More info on Oat Of This Swirled..."
       when "2"
         puts "More info on One Sweet World..."
       when "3"
-        puts "More info on Out Of This Swirled..."
+        puts "More info on Truffle Kerfuffle..."
       when "4"
         puts "More info on Bourbon Praline Pecan..."
       when "5"
