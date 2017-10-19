@@ -19,33 +19,33 @@ class IceCreamCliApp::IceCreamFlavor
     flavor_1.description = "One Sweet World description"
     flavor_1.ingredients = "One Sweet World ingredients"
 
-    flavor_1 = self.new
-    flavor_1.flavor_name = "Oat Of This Swirled"
-    flavor_1.parlor_name = "Ben and Jerry's"
-    flavor_1.url = "http://www.benjerry.com/flavors/oat-of-this-swirled-ice-cream"
-    flavor_1.description = "Oat Of This Swirled description"
-    flavor_1.ingredients = "TOat Of This Swirled ingredients"
+    flavor_2 = self.new
+    flavor_2.flavor_name = "Oat Of This Swirled"
+    flavor_2.parlor_name = "Ben and Jerry's"
+    flavor_2.url = "http://www.benjerry.com/flavors/oat-of-this-swirled-ice-cream"
+    flavor_2.description = "Oat Of This Swirled description"
+    flavor_2.ingredients = "TOat Of This Swirled ingredients"
 
-    flavor_1 = self.new
-    flavor_1.flavor_name = "Truffle Kerfuffle"
-    flavor_1.parlor_name = "Ben and Jerry's"
-    flavor_1.url = "http://www.benjerry.com/flavors/truffle-kerfuffle-ice-cream"
-    flavor_1.description = "Truffle Kerfuffle description"
-    flavor_1.ingredients = "Truffle Kerfuffle ingredients"
+    flavor_3 = self.new
+    flavor_3.flavor_name = "Truffle Kerfuffle"
+    flavor_3.parlor_name = "Ben and Jerry's"
+    flavor_3.url = "http://www.benjerry.com/flavors/truffle-kerfuffle-ice-cream"
+    flavor_3.description = "Truffle Kerfuffle description"
+    flavor_3.ingredients = "Truffle Kerfuffle ingredients"
 
-    flavor_1 = self.new
-    flavor_1.flavor_name = "Bourbon Praline Pecan"
-    flavor_1.parlor_name = "Haagen Dazs"
-    flavor_1.url = "https://www.haagendazs.us/products/4154/ice-cream/bourbon-praline-pecan"
-    flavor_1.description = "Bourbon Praline Pecan description"
-    flavor_1.ingredients = "Bourbon Praline Pecan ingredients"
+    flavor_4 = self.new
+    flavor_4.flavor_name = "Bourbon Praline Pecan"
+    flavor_4.parlor_name = "Haagen Dazs"
+    flavor_4.url = "https://www.haagendazs.us/products/4154/ice-cream/bourbon-praline-pecan"
+    flavor_4.description = "Bourbon Praline Pecan description"
+    flavor_4.ingredients = "Bourbon Praline Pecan ingredients"
 
-    flavor_1 = self.new
-    flavor_1.flavor_name = "Espresso Chocolate Cookie Crumble"
-    flavor_1.parlor_name = "Haagen Dazs"
-    flavor_1.url = "https://www.haagendazs.us/products/4153/ice-cream/espresso-chocolate-cookie-crumble"
-    flavor_1.description = "Espresso Chocolate Cookie Crumble description"
-    flavor_1.ingredients = "Espresso Chocolate Cookie Crumble ingredients"
+    flavor_5 = self.new
+    flavor_5.flavor_name = "Espresso Chocolate Cookie Crumble"
+    flavor_5.parlor_name = "Haagen Dazs"
+    flavor_5.url = "https://www.haagendazs.us/products/4153/ice-cream/espresso-chocolate-cookie-crumble"
+    flavor_5.description = "Espresso Chocolate Cookie Crumble description"
+    flavor_5.ingredients = "Espresso Chocolate Cookie Crumble ingredients"
 
     flavor_6 = self.new
     flavor_6.flavor_name = "Toasted Coconut Caramel"
