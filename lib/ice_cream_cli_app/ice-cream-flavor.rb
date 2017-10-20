@@ -2,58 +2,96 @@ class IceCreamCliApp::IceCreamFlavor
   attr_accessor :flavor_name, :parlor_name, :url, :description, :ingredients
 
   def self.all
-    #puts <<-DOC
-    #New flavors:
-    #1. Oat Of This Swirled
-    #2. One Sweet World
-    #3. Truffle Kerfuffle
-    #4. Bourbon Praline Pecan
-    #5. Espresso Chocolate Cookie Crumble
-    #6. Toasted Coconut Caramel
-    #DOC
+    self.scrape_ice_creams
+  end
+    def self.scrape_ice_creams
+      ice_creams = []
 
-    flavor_1 = self.new
-    flavor_1.flavor_name = "One Sweet World"
-    flavor_1.parlor_name = "Ben and Jerry's"
-    flavor_1.url = "http://www.benjerry.com/flavors/one-sweet-world-ice-cream"
-    flavor_1.description = "One Sweet World description"
-    flavor_1.ingredients = "One Sweet World ingredients"
+      ice_creams << self.scrape_bj_OSW
+      ice_creams << self.scrape_bj_OOTS
+      ice_creams << self.scrape_bj_TK
+      ice_creams << self.scrape_hd_BPP
+      ice_creams << self.scrape_hd_ECCC
+      ice_creams << self.scrape_hd_TCC
 
-    flavor_2 = self.new
-    flavor_2.flavor_name = "Oat Of This Swirled"
-    flavor_2.parlor_name = "Ben and Jerry's"
-    flavor_2.url = "http://www.benjerry.com/flavors/oat-of-this-swirled-ice-cream"
-    flavor_2.description = "Oat Of This Swirled description"
-    flavor_2.ingredients = "TOat Of This Swirled ingredients"
+      ice_creams
+  end
 
-    flavor_3 = self.new
-    flavor_3.flavor_name = "Truffle Kerfuffle"
-    flavor_3.parlor_name = "Ben and Jerry's"
-    flavor_3.url = "http://www.benjerry.com/flavors/truffle-kerfuffle-ice-cream"
-    flavor_3.description = "Truffle Kerfuffle description"
-    flavor_3.ingredients = "Truffle Kerfuffle ingredients"
+  def self.scrape_bj_OSW
+    doc = Nokogiri::HTML(open("http://www.benjerry.com/flavors/one-sweet-world-ice-cream"))
 
-    flavor_4 = self.new
-    flavor_4.flavor_name = "Bourbon Praline Pecan"
-    flavor_4.parlor_name = "Haagen Dazs"
-    flavor_4.url = "https://www.haagendazs.us/products/4154/ice-cream/bourbon-praline-pecan"
-    flavor_4.description = "Bourbon Praline Pecan description"
-    flavor_4.ingredients = "Bourbon Praline Pecan ingredients"
+    flavor = self.new
+    flavor.flavor_name = doc.css("h1.productDetails-name[itemprop='name']").text
+    flavor.parlor_name = "Ben & Jerry's"
+    flavor.url = "http://www.benjerry.com/flavors/one-sweet-world-ice-cream"
+    flavor.description = doc.css("p#productDetails-product_history").text.strip
+    flavor.ingredients = doc.css("div.package-ingredients").text.strip.downcase
 
-    flavor_5 = self.new
-    flavor_5.flavor_name = "Espresso Chocolate Cookie Crumble"
-    flavor_5.parlor_name = "Haagen Dazs"
-    flavor_5.url = "https://www.haagendazs.us/products/4153/ice-cream/espresso-chocolate-cookie-crumble"
-    flavor_5.description = "Espresso Chocolate Cookie Crumble description"
-    flavor_5.ingredients = "Espresso Chocolate Cookie Crumble ingredients"
+    flavor
+  end
 
-    flavor_6 = self.new
-    flavor_6.flavor_name = "Toasted Coconut Caramel"
-    flavor_6.parlor_name = "Haagen Dazs"
-    flavor_6.url = "https://www.haagendazs.us/products/4152/ice-cream/toasted-coconut-caramel"
-    flavor_6.description = "Toasted Coconut Caramel description"
-    flavor_6.ingredients = "Toasted Coconut Caramel ingredients"
+  def self.scrape_bj_OOTS
+    doc = Nokogiri::HTML(open("http://www.benjerry.com/flavors/oat-of-this-swirled-ice-cream"))
 
-    [flavor_1, flavor_2, flavor_3, flavor_4, flavor_5, flavor_6]
+    flavor = self.new
+    flavor.flavor_name = doc.css("h1.productDetails-name[itemprop='name']").text.strip
+    flavor.parlor_name = "Ben & Jerry's"
+    flavor.url = "http://www.benjerry.com/flavors/oat-of-this-swirled-ice-cream"
+    flavor.description = doc.css("p#productDetails-product_history").text.strip
+    flavor.ingredients = doc.css("div.package-ingredients").text.strip.downcase
+
+    flavor
+  end
+
+  def self.scrape_bj_TK
+    doc = Nokogiri::HTML(open("http://www.benjerry.com/flavors/truffle-kerfuffle-ice-cream"))
+
+    flavor = self.new
+    flavor.flavor_name = doc.css("h1.productDetails-name[itemprop='name']").text.strip
+    flavor.parlor_name = "Ben & Jerry's"
+    flavor.url = "http://www.benjerry.com/flavors/truffle-kerfuffle-ice-cream"
+    flavor.description = doc.css("p#productDetails-product_history").text.strip
+    flavor.ingredients = doc.css("div.package-ingredients").text.strip.downcase
+
+    flavor
+  end
+
+  def self.scrape_hd_BPP
+    doc = Nokogiri::HTML(open("https://www.haagendazs.us/products/4154/ice-cream/bourbon-praline-pecan"))
+
+    flavor = self.new
+    flavor.flavor_name = doc.css("h1.product-title[itemprop='name']").text.strip
+    flavor.parlor_name = "Haagen Dazs"
+    flavor.url = "https://www.haagendazs.us/products/4154/ice-cream/bourbon-praline-pecan"
+    flavor.description = doc.css("h4.romance-copy").text.strip
+    flavor.ingredients = doc.css("div.ingredients").text.strip.downcase
+
+    flavor
+  end
+
+  def self.scrape_hd_ECCC
+    doc = Nokogiri::HTML(open("https://www.haagendazs.us/products/4153/ice-cream/espresso-chocolate-cookie-crumble"))
+
+    flavor = self.new
+    flavor.flavor_name = doc.css("h1.product-title[itemprop='name']").text.strip
+    flavor.parlor_name = "Haagen Dazs"
+    flavor.url = "https://www.haagendazs.us/products/4153/ice-cream/espresso-chocolate-cookie-crumble"
+    flavor.description = doc.css("h4.romance-copy").text.strip
+    flavor.ingredients = doc.css("div.ingredients").text.strip
+
+    flavor
+  end
+
+  def self.scrape_hd_TCC
+    doc = Nokogiri::HTML(open("https://www.haagendazs.us/products/4152/ice-cream/toasted-coconut-caramel"))
+
+    flavor = self.new
+    flavor.flavor_name = doc.css("h1.product-title[itemprop='name']").text.strip
+    flavor.parlor_name = "Haagen Dazs"
+    flavor.url = "https://www.haagendazs.us/products/4152/ice-cream/toasted-coconut-caramel"
+    flavor.description = doc.css("h4.romance-copy").text.strip
+    flavor.ingredients = doc.css("div.ingredients").text.strip
+
+    flavor
   end
 end
