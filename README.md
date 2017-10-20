@@ -1,12 +1,8 @@
 # IceCreamCliApp
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ice_cream_cli_app`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This Ruby Gem provides a CLI to view the 3 newest flavors of the top two ice cream brands.
 
 ## Installation
-
-Add this line to your application's Gemfile:
 
 ```ruby
 gem 'ice_cream_cli_app'
@@ -22,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Execute this file using `./bin/ice-cream` and follow the written steps.  
 
 ## Development
 
