@@ -14,7 +14,7 @@ class IceCreamCliApp::CLI
   def menu
     input = nil
     while input != "exit"
-        puts "Enter flavor number you'd like more info on, or type list to see flavors again, or type exit:"
+        puts "Enter flavor number you'd like more info on, or type list to see flavors, or type exit:"
       input = gets.strip.downcase
       case input
       when "1"
