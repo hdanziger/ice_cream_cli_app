@@ -17,17 +17,17 @@ class IceCreamCliApp::CLI
     input = nil
     while input != "exit"
         puts "Enter flavor number you'd like more info on, or type list to see flavors, or type exit:"
-      input = gets.strip.downcase
+      input = gets.strip
 
       if input == "list"
         list_flavors
       elsif input == "exit"
         goodbye
-      elsif input.to_i < 7
+      elsif input.to_i <=6
         flavor = @flavors[input.to_i-1]
-        puts "#{flavor.flavor_name}, by: #{flavor.parlor_name} - Flavor Description: #{flavor.description} - Flavor ingredients: #{flavor.ingredients}"
+        puts "#{flavor.flavor_name}, by #{flavor.parlor_name} - Flavor Description: #{flavor.description} - Flavor ingredients: #{flavor.ingredients}"
       else
-        puts "Oops! that number doesn't have a flavor. Try again, or type list or exit!"
+       puts "Oops! that number doesn't have a flavor. Try again, or type list or exit!"
       end
     end
   end
