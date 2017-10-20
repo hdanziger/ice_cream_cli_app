@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Hannah Danziger'"]
   spec.email         = ["'hdanziger8@gmail.com'"]
 
-  spec.summary       = %q{TODO: Ice cream flavors.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = "Newest 3 ice creams from the top two brands."
+  spec.description   = "Get info and details on new popular ice creams."
   spec.homepage      = "TODO: https://github.com/hdanziger/ice_cream_cli_app"
   spec.license       = "MIT"
 

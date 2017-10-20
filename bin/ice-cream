@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/ice_cream_cli_app"
+require "bundler/setup"
+require "ice_cream_cli_app"
 
 IceCreamCliApp::CLI.new.call
