@@ -3,7 +3,6 @@ class IceCreamCliApp::CLI
   def call
     list_flavors
     details
-    goodbye
   end
 
   def list_flavors
@@ -20,11 +19,13 @@ class IceCreamCliApp::CLI
         puts "Enter flavor number you'd like more info on, or type list to see flavors, or type exit:"
       input = gets.strip.downcase
 
-      if input.to_i < 7
+      if input == "list"
+        list_flavors
+      elsif input == "exit"
+        goodbye
+      elsif input.to_i < 7
         flavor = @flavors[input.to_i-1]
         puts "#{flavor.flavor_name}, by: #{flavor.parlor_name} - Flavor Description: #{flavor.description} - Flavor ingredients: #{flavor.ingredients}"
-      elsif input == "list"
-        list_flavors
       else
         puts "Oops! that number doesn't have a flavor. Try again, or type list or exit!"
       end

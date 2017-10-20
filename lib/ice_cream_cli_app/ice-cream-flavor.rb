@@ -24,7 +24,7 @@ class IceCreamCliApp::IceCreamFlavor
     flavor.flavor_name = doc.css("h1.productDetails-name[itemprop='name']").text
     flavor.parlor_name = "Ben & Jerry's"
     flavor.url = "http://www.benjerry.com/flavors/one-sweet-world-ice-cream"
-    flavor.description = doc.css("p#productDetails-product_history").text.strip
+    flavor.description = doc.css("p#productDetails-product_desc").text.strip
     flavor.ingredients = doc.css("div.package-ingredients").text.strip.downcase
 
     flavor
@@ -37,7 +37,7 @@ class IceCreamCliApp::IceCreamFlavor
     flavor.flavor_name = doc.css("h1.productDetails-name[itemprop='name']").text.strip
     flavor.parlor_name = "Ben & Jerry's"
     flavor.url = "http://www.benjerry.com/flavors/oat-of-this-swirled-ice-cream"
-    flavor.description = doc.css("p#productDetails-product_history").text.strip
+    flavor.description = doc.css("p#productDetails-product_desc").text.strip
     flavor.ingredients = doc.css("div.package-ingredients").text.strip.downcase
 
     flavor
@@ -50,7 +50,7 @@ class IceCreamCliApp::IceCreamFlavor
     flavor.flavor_name = doc.css("h1.productDetails-name[itemprop='name']").text.strip
     flavor.parlor_name = "Ben & Jerry's"
     flavor.url = "http://www.benjerry.com/flavors/truffle-kerfuffle-ice-cream"
-    flavor.description = doc.css("p#productDetails-product_history").text.strip
+    flavor.description = doc.css("p#productDetails-product_desc").text.strip
     flavor.ingredients = doc.css("div.package-ingredients").text.strip.downcase
 
     flavor
