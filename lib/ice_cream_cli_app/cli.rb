@@ -7,8 +7,11 @@ class IceCreamCliApp::CLI
   end
 
   def list_flavors
-    puts "Welcome to the newest 3 ice cream flavors for the top 2 brands!"
+    puts "Welcome to the newest 3 ice cream flavors for each of the top 2 brands!"
     @flavors = IceCreamCliApp::IceCreamFlavor.all
+    @flavors.each.with_index(1) do |flavor, i|
+      puts "#{i}. #{flavor.flavor_name} - #{flavor.parlor_name}"
+    end
   end
 
   def menu
@@ -16,20 +19,11 @@ class IceCreamCliApp::CLI
     while input != "exit"
         puts "Enter flavor number you'd like more info on, or type list to see flavors, or type exit:"
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "More info on Oat Of This Swirled..."
-      when "2"
-        puts "More info on One Sweet World..."
-      when "3"
-        puts "More info on Truffle Kerfuffle..."
-      when "4"
-        puts "More info on Bourbon Praline Pecan..."
-      when "5"
-        puts "More info on Espresso Chocolate Cookie Crumble..."
-      when "6"
-        puts "More info on Toasted Coconut Caramel..."
-      when "list"
+
+      if input.to_i > 0
+        the_flavors = @flavors[input.to_i-1]
+        puts "#{the_flavors.flavor_name} - #{the_flavors.parlor_name}"
+      elsif input == "list"
         list_flavors
       else
         puts "Oops! that number doesn't have a flavor. Try again, or type list or exit!"

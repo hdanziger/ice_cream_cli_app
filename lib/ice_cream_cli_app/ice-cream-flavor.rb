@@ -2,15 +2,15 @@ class IceCreamCliApp::IceCreamFlavor
   attr_accessor :flavor_name, :parlor_name, :url, :description, :ingredients
 
   def self.all
-    puts <<-DOC
-    New flavors:
-    1. Oat Of This Swirled
-    2. One Sweet World
-    3. Truffle Kerfuffle
-    4. Bourbon Praline Pecan
-    5. Espresso Chocolate Cookie Crumble
-    6. Toasted Coconut Caramel
-    DOC
+    #puts <<-DOC
+    #New flavors:
+    #1. Oat Of This Swirled
+    #2. One Sweet World
+    #3. Truffle Kerfuffle
+    #4. Bourbon Praline Pecan
+    #5. Espresso Chocolate Cookie Crumble
+    #6. Toasted Coconut Caramel
+    #DOC
 
     flavor_1 = self.new
     flavor_1.flavor_name = "One Sweet World"
