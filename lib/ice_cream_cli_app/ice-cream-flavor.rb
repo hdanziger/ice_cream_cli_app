@@ -10,9 +10,16 @@ class IceCreamCliApp::IceCreamFlavor
     @@all
   end
 
-  def self.search_ingredients(keyword)
+  def self.search_ingredients(ingredient = flavor.ingredients)
+    lime_juice = []
+    IceCreamCliApp::IceCreamFlavor.all.each do |flavor|
+      flavor.inspect.each do |ingredient|
+        lime_juice << ingredient.detect("lime juice")
     #returns an array of all the flavors that contain the keyword in its ingredients
     #lime juice, FIND METHOD
-    "hello"
+
+      end
+    end
+
   end
 end

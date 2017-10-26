@@ -1,5 +1,5 @@
 class IceCreamCliApp::Scraper
-
+#binding.pry
   def self.scrape_ice_creams
     self.scrape_bj_OSW
     self.scrape_bj_OOTS
@@ -7,6 +7,7 @@ class IceCreamCliApp::Scraper
     self.scrape_hd_BPP
     self.scrape_hd_ECCC
     self.scrape_hd_TCC
+
   end
 
   def self.scrape_bj_OSW

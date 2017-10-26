@@ -4,7 +4,7 @@ class IceCreamCliApp::CLI
   def call
     puts "Welcome to the newest 3 ice cream flavors for each of the top 2 brands!"
     IceCreamCliApp::Scraper.scrape_ice_creams
-  #  binding.pry
+    #binding.pry
     list_flavors
     details
   end
